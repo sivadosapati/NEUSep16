@@ -54,7 +54,7 @@ class ShoppingOnline{
 		ShoppingWebsite amazon = new ShoppingWebsite();
 
 		Book headFirstJava = new Book();headFirstJava.name = "Head First Java";
-		Book thinkingJava = new Book();thinkingJava = "Thinking In Java";
+		Book thinkingJava = new Book();thinkingJava.name = "Thinking In Java";
 		Book[] books = {headFirstJava, thinkingJava};
 
 		Consumer michael = new Consumer();
@@ -62,8 +62,8 @@ class ShoppingOnline{
 		
 		michael.visitsWebsite(amazon);
 		Book[] books = amazon.displayAvailableBooks();
-		Book book = michael.findTheBookInterestedIn( books , amazon);
-		michael.placeOrderForBook(book, amazon)
+		Book book = michael.findTheBookInterestedIn(books);
+		michael.placeOrderForBook(book)
 		Money money = michael.payMoneyToWebsite(amazon);
 		amazon.acceptMoneyFromConsumer(michael, money);
 	}

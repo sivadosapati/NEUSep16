@@ -4,19 +4,16 @@ Scenario : ShoppingOnline : Please look in Solutions1/Assignment1 - Shopping Onl
 Description : A consumer is interested in buying a book on a online Website like Amazon
 
 Scenario : Pay tuition
-Description : <<Jia should write the description>>
-
+Description : A student wants to pay his tuition through myNEU account.
+ 
 Scenario : Order for delivery
-Description : <<Jia should write the description>>
+Description : A consumer is going to order a delivery through phone calls.
 
 Scenario : Booking an Airbnb
-Description : <<Jia should write the description>>
-
-Scenario : Print your homework
-Description : <<Jia should write the description>>
+Description : A tourist wants to book a house on Airbnb app.
 
 Scenario : Travelling to LA
-Description : <<Jia should write the description>>
+Description : A tourist is trying to find the cheapest flight to LA.
 
 Scenario : Drive home
-Description : <<Jia should write the description>>
+Description : A student is driving home from school.
