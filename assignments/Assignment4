@@ -10,6 +10,31 @@
 2. Implement Class MusicAlbum which encapsulated a music Album, each album has a string variable albumTitle and a String variable singer representing the name of singer, double variable price representing the price of album, objects of this class are Initialized using all of its instance variables.
 The class has accessor methods for all its Variables and a mutator method for price.
 
+public class MusicAlbum {
+		private String albumTitle;
+		private String singer;
+		private double price;
+ 
+		Public MusicAlbum(String albumTitle, String singer, int price){
+				this.albumTitle=albumTitle;
+				this.singer=singer;
+				this.price=price;
+		}
+		public String getAlbumTitle() {
+				return albumTitle;
+		}
+		public String getSinger() {
+				return singer;
+		}
+		public double getPrice() {
+				return price;
+		}
+		public void setPrice (double price) {
+            	this.price = price
+		}
+}
+
+
 
 3. Write a class named GasTank containing:
 An instance variable named amount of type double, initialized to 0.
@@ -17,12 +42,86 @@ A method named addGas that accepts a parameter of type double . The value of the
 A method named useGas that accepts a parameter of type double . The value of the amount instance variable is decreased by the value of the parameter.
 A method named getGasLevel that accepts no parameters. getGasLevel returns the value of the amount instance variable.
 
+public class GasTank {
+		private double amount = 0;
+		public void addGas (double doubleAmount) {
+				amount += doubleAmount;
+		}
+		public void useGas (double doubleAmount) {
+				amount ‐= doubleAmount;
+		}
+		public double getGasLevel () {
+				return amount;
+		}
+}
+
+
 
 4. Design and implement a class called Car. You need to create necessary attributes for this class, and method if needed
 Define the Car constructor to initialize these values (in that order). Include getter and setter methods for all instance data.
 
+public class Car {
+		private String make, model;
+		private int year;
+		private int amountOfRemainingGas;
+
+		public Car(String make, String model, int year, int amountOfGas) {
+				setMake(make);
+				setModel(model);
+				setYear(year);
+		}
+
+		public String getMake() {
+				return make;
+		}
+
+		public void setMake(String make) {
+				this.make = make;
+		}
+		public String getModel() {
+				return model;
+		}
+
+		public void setModel(String model) {
+				this. model = model;
+		}
+		public int getYear() {
+				return year;
+		}
+		public void setYear(int year){
+				this.year=year;
+		}
+		public int getAmountOfRemainingGas(){
+				return amountOfRemaininGas;
+		}
+		public void setAmountOfRemainingGas(int amountOfRemainingGas){
+				this.amountOfRemainingGas = amountOfRemainingGas;
+		}
+		public int isDriving(Driver driver, int miles) {
+				if (miles <= amountOfRemainingGas) {
+						amountOfRemainingGas = amountOfRemainingGas - miles;
+						return amountOfRemainingGas;
+				} else {
+						System.out.println("There is not enough gas for " + type + " " + name + " " + " driving " + miles + " miles, please refuel.");
+						return 0;
+				}
+		}
+}
+
+
 
 5. Combine with problem 3 and 4, define a class named Driver that contains methods like drive and addGas so that the driver can drive the car.
+
+class Driver {
+		String name;
+		int drive(Car c) {
+				int x = (int) (Math.random() * 20);
+				int y = v.isDriving(this, x);
+				System.out.println(name + " wants to drive " + x + " miles, the vehicle has drived " + y + " miles, now " + v.getAmountOfRemainingGas() + " remained.");
+				return x;
+		}
+}
+
 
 
 Bonus: 
@@ -33,5 +132,55 @@ In the case of overflow the user should be informed with a message
 In the case of underflow, the user should be informed with a message & a value of zero is returned.
 
 Assumptions: The stack will hold up to 10 integer values.
+
+/* This class defines an integer stack that can hold 10 values*/
+
+class Stack {
+		private int stack[] = new int[10];
+		private int tos;
+
+		Stack() {
+				tos = ‐1;
+		}
+ 
+		// Push an item onto the stack
+		public void push(int item) {
+				if(tos==9)
+						System.out.println("Stack is full.");
+				else  
+						stack[++tos] = item;
+		}
+		// Pop an item from the stack
+		public int pop() {
+				if(tos < 0) {
+						System.out.println("Stack underflow.");
+						return 0;
+				}else{
+						return stack[tos--];
+				}
+		}
+}
+
+class TestStack {
+		public static void main(String args[]) {
+		int element;
+
+		Stack mystack1 = new Stack();
+
+		// push some numbers onto the stack
+		mystack1.push(1);
+		mystack1.push(17);
+
+		// mystack1.stck[3]=4 
+		//compile error stack is private 
+		mystack1.push(20);
+		
+		// pop some numbers off the stack
+		element=mystack1.pop();
+		System.out.println("Element is "+element);
+		element=mystack1.pop();
+		System.out.println("Element is "+element);
+}
+
 
 
