@@ -1,7 +1,11 @@
 package interfaces;
 
+import neu.jan16.lecture7.Test;
+
 public class Hospital {
 	public static void main(String args[]) {
+		Test t = new Test();
+
 		Person rose = new Person("Rose");
 		Person rachel = new Person("Rachel");
 		rose.digHoleInEarth();

@@ -1,0 +1,132 @@
+void conduct5100Class() throws ProfessorException {
+	openClassRoom();
+	professorComingToClass();
+	switchOnTheLights();
+		studentComingToClassFor5100("Jia");
+		studentComingToClassFor5100("Alex");
+	everyOneLeavesTheClass();
+}
+
+class BusNotRunningException extends Exception{
+	int timeInMinutesBusIsNotRunning = 10;
+	BusNotRunningException( int a ){
+		this.timeInMinutesBusIsNotRunning = a;
+	}
+}
+
+void waitForTheBus() throws BusNotRunningException{
+	standInTheBusStopForSometime(5);
+	boolean b = askPassengerIfBusIsComing();
+	if( b == false){
+		boolean b = callDepotToFindIfBusIsComing();
+		if( b == true ){
+			standInTheBusStopForSometime(5);
+			
+		}
+		else{
+			BusNotRunningException bnre = new BusNotRunningException( 20);
+			throw bnre;
+		}
+	}
+}
+
+void studentComingToClassFor5100( String name) throws ProfessorException{
+	pickALaptop();
+	comeToBusStop();
+	try{
+		waitForTheBus();
+		getIntoTheBus();
+		//listeningToMusic();
+	}
+	catch(BusNotRunningException be){
+		
+		callUber();
+		try{
+			//listenToMusic();
+			driveInUberCar();
+		}
+		catch(AccidentException ae){
+			callPolice();
+			//listenToMusic();
+		}
+	}
+	catch(BusBrokeDownException bde){
+		//listeningToMusic();
+		callAnotherBus();
+		getIntoOtherBus();
+	}
+	finally{
+		listenToMusic();
+	}
+	getDownAtUniversity();
+	try{
+		takeTheElevator();
+	}
+	catch(ElevatorNotWorkingException e){
+		takeStairs();
+	}
+	try{
+		goToClassRoom("Whidbey");
+	}
+	catch(ClassRoomChangedException ce){
+		gotoClassRoom("Orcas");
+	}
+	sitOnTheChair();
+	listenToProfessor();
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int methodA(){
+	Code 0
+	try{
+		Code 1
+		Code 2
+		Code 3
+		return 6;
+	}
+	catch(Exception e){
+		Code 4
+		return 7;
+	}
+	finally{
+		Code 6
+	}
+	Code 721;
+	try{
+		Code 22
+	catch(Exception e){
+		Code 11
+	}
+	finally{
+		Code 7
+	}
+	Code 5
+}
